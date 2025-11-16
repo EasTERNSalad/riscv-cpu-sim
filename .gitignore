@@ -1,0 +1,15 @@
+# Verilator / Icarus build files
+obj_dir/
+build/
+
+# Waveform dumps
+*.vcd
+
+# Editor / VSCode
+.vscode/
+
+# Temporary test binaries
+*.out
+*.o
+regfile_tb
+if_id_tb
