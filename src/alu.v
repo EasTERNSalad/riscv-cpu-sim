@@ -12,7 +12,7 @@ always @(*) begin
         3'b001: result = a - b;   
         3'b010: result = a & b;   
         3'b011: result = a | b;   
-        default: result = 32'b0;
+        default: result = 0;
     endcase
 end
 
