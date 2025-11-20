@@ -1,16 +1,16 @@
-#5-Stage RISC-V Pipelined CPU Simulator (Verilog + Verilator + GTKWave)
+# 5-Stage RISC-V Pipelined CPU Simulator (Verilog + Verilator + GTKWave)
 
 Author: Krish Patel
 Repo: https://github.com/EasTERNSalad/riscv-cpu-sim
 Domain: Computer Architecture / Digital Design / Hardware Simulation
 
- Project Overview
+# Project Overview
 
 This project implements a 5-stage pipelined RISC-V RV32I CPU using Verilog, following the classic IF–ID–EX–MEM–WB pipeline model.
 The goal was to explore instruction-level parallelism, hazard resolution, and pipeline performance through simulation.
 The CPU is simulated using Verilator, and pipeline behavior is visualized through GTKWave, allowing detailed study of hazards, forwarding, stalling, and CPI behavior.
 
-#Objectives
+# Objectives
 
 Implement a modular & synthesizable RISC-V pipeline
 Understand and test pipeline hazards (RAW, load-use)
@@ -19,7 +19,7 @@ Measure pipeline performance (CPI, cycle count)
 Visualize pipeline timing through waveform analysis
 Build skills relevant to microarchitecture, HDL design, and architecture research
 
-#Pipeline Architecture
+# Pipeline Architecture
 
 The design follows the standard 5 stages:
 
@@ -29,7 +29,7 @@ EX – Execute / ALU
 MEM – Data Memory Access
 WB – Register Writeback
 
-#Key datapath components include:
+# Key datapath components include:
 
 Program Counter (PC)
 Instruction Memory
@@ -41,7 +41,7 @@ Hazard Detection Unit
 Forwarding Unit
 Pipeline Registers (IF/ID, ID/EX, EX/MEM, MEM/WB)
 
-#Features Implemented
+# Features Implemented
 # Core ISA Support (RV32I)
 
 ADD, SUB, AND, OR, XOR
