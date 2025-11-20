@@ -6,7 +6,7 @@ module control_unit (
     output reg MemRead,
     output reg MemWrite,
     output reg branch,
-    output reg [1:0] ALUOp,
+    output reg [1:0] ALUOp
 );
 always @(*) begin
     case (opcode)
@@ -19,7 +19,7 @@ always @(*) begin
             MemRead = 0;
             MemWrite = 0;
             branch = 0;
-            ALUop = 2'b10; //R-type ALU
+            ALUOp = 2'b10; //R-type ALU
         end
 
         //I-type
@@ -30,7 +30,7 @@ always @(*) begin
             MemRead = 0;
             MemWrite = 0;
             branch = 0;
-            ALUop = 2'b11; //L-type ALU
+            ALUOp = 2'b11; //L-type ALU
         end
 
         //Load
@@ -41,7 +41,7 @@ always @(*) begin
             MemRead = 1;
             MemWrite = 0;
             branch = 0;
-            ALUop = 2'b00; //Load 
+            ALUOp = 2'b00; //Load 
         end
 
         //Store
@@ -52,7 +52,7 @@ always @(*) begin
             MemRead = 0;
             MemWrite = 1;
             branch = 0;
-            ALUop = 2'b00; //Store ALU
+            ALUOp = 2'b00; //Store ALU
         end
 
         default: begin
@@ -62,7 +62,7 @@ always @(*) begin
             MemRead = 0;
             MemWrite = 0;
             branch = 0;
-            ALUop = 2'b00; 
+            ALUOp = 2'b00; 
         end
     endcase
     end

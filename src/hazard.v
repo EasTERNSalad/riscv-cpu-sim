@@ -10,7 +10,7 @@ module hazard_unit (
         if (indec_memread && ((indec_rd == ifid_rs1) || (indec_rd == ifid_rs2))) begin
             stall = 1;
             ifid_write = 0;
-            pc_write = 0;
+            pc_write = 1;
         end
     end
 endmodule

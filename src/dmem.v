@@ -4,19 +4,28 @@ module dmem (
     input MemWrite,
     input [31:0] addr,
     input [31:0] wdata,
-    output [31:0] rdata
+    output reg [31:0] rdata
 );
 
     reg [31:0] mem[0:255];
-    initial begin 
+
+    initial begin
         mem[0] = 32'hDEADBEEF;
         mem[1] = 32'hCAFEBABE;
     end
 
-assign rdata = (MemRead) ? mem[addr[9:2]] : 32'b0;
+    wire [7:0] waddr = addr[9:2];
 
-always @(posedge clk) begin
-    if (MemWrite)
-        mem[addr[9:2]] <= wdata;
-end
+    always @(*) begin
+        if (MemRead)
+            rdata = mem[waddr];
+        else
+            rdata = 32'b0;
+    end
+
+    always @(posedge clk) begin
+        if (MemWrite)
+            mem[waddr] <= wdata;
+    end
+
 endmodule
